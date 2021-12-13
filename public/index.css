@@ -39,6 +39,13 @@ nav{
     font-family: 'Bebas Neue', cursive;
     color: white;
     text-shadow:1px -20px 10px rgb(60 19 104);
+    transition: all .5s ease;
+}
+
+.logo:hover{
+    color: rgb(60, 19,104);
+    text-shadow:1px -20px 10px white;
+    -webkit-text-stroke: 1px black;
 }
 
 .navUl{

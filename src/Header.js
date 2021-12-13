@@ -1,6 +1,6 @@
 function Header (){
     return (<header>
-        <a href="/" className="logo">MamahuevoGymStore</a>
+        <a href="/" className="logo">OverPowerStore</a>
         <nav>
             <ul className="navUl">
                 <a href="/"><li className="home"><ion-icon name="home-outline"size="large"></ion-icon></li></a>
