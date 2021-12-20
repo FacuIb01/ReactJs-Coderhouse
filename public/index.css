@@ -34,6 +34,7 @@ nav{
     flex-wrap: nowrap;
 }
 
+
 .logo{
     font-size: 5rem;
     font-family: 'Bebas Neue', cursive;
@@ -75,6 +76,12 @@ li{
     width: 5rem;
     transition: all .5s ease;
 }
+
+#numeroCarrito{
+    font-size: 1.5rem;
+    font-family: 'Bebas Neue', cursive;
+}
+
 
 .home:hover{
     width: 8rem;
@@ -120,13 +127,26 @@ li{
 
 /*Menu*/
 
-/*ANIMACIONES*/
-@keyframes logo {
-    from{
-        text-shadow: 10px yellow;
-    }
-    to{
-
-    }
+/*Section Saludo*/
+#seccionSaludo{
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
 }
+
+#greetings{
+    font-size: 5rem;
+    color: white;
+    font-family: 'Bebas Neue', cursive;
+}
+
+/*Section Saludo*/
+
+/*ANIMACIONES*/
+
 /*ANIMACIONES*/
