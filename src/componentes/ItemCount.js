@@ -1,7 +1,6 @@
 import { useState } from "react"
 
-function ItemCount ({stock, initial}){
-
+function ItemCount ({stock, initial, onAdd}){
 
 
     let [numero, setInitial] = useState(initial)
@@ -11,7 +10,6 @@ function ItemCount ({stock, initial}){
             alert("No podes comprar más")
         }else{
             setInitial(numero + 1 )
-            
         }
     }
     const disminuir = () => {
@@ -22,12 +20,15 @@ function ItemCount ({stock, initial}){
         }
     }
 
-    const onAdd = () => {
-        if(numero === 0){
-            alert("Debes agregar algo al carrito")
+    const confirmacionCantidad = () => {
+        if(stock > 0){
+            if(numero >= 1){
+                onAdd(numero)
+            }else{
+                alert("No es posible agregar 0 productos")
+            }
         }else{
-            alert(`Agregaste ${numero} producto/s al carrito`)
-            setInitial(0)
+            alert("No hay stock del producto")
         }
     }
 
@@ -41,7 +42,7 @@ function ItemCount ({stock, initial}){
             <div className="botones"><button onClick={disminuir}><ion-icon size="large" name="remove-outline"></ion-icon></button>
             <span>{numero}</span>
             <button onClick={incrementar}><ion-icon size="large" name="add-outline"></ion-icon></button></div>
-            <button className="add" onClick={onAdd}>Agregar</button>
+            <button className="add" onClick={confirmacionCantidad}>Agregar</button>
         </div>
     )
 }
