@@ -1,12 +1,12 @@
 import Header from "./Header";
-import ItemListContainer from "./componentes/ItemListContainer"
-import Productos from "./Productos";
+import Home from "./componentes/Home"
+import ItemListContainer from "./ItemListContainer";
 
 function App(){
     return (<>
         <Header/>
+        <Home/>
         <ItemListContainer greetings={"Bienvenido!"}/>
-        <Productos/>
     </>)
 
 }

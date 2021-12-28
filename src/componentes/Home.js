@@ -1,9 +1,9 @@
 import Saludo from "./Saludo"
 
-function ItemListContainer ({greetings}){
+function Home (){
     return (<section id="seccionSaludo">
             <Saludo/>
     </section>)
 }
 
-export default ItemListContainer
+export default Home

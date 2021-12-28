@@ -3,7 +3,7 @@ let i = 0
 const saludos = ["Welcome!", "Bienvenido!", "Bienvenue!", "ようこそ!"]
 
 function Saludo (){
-    const [mostrarSaludos, setSaludos] = useState(saludos[0])
+    let [mostrarSaludos, setSaludos] = useState(saludos[0])
 
     
     setTimeout(() => {
