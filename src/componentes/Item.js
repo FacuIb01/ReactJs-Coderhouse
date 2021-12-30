@@ -8,7 +8,7 @@ function Item ({productos}) {
             <img src={e.img} alt="" className="imgProducto"/>
             <p>${e.precio}</p>
         </div>
-            <ItemCount/>
+            <ItemCount stock={5} initial={1} onAdd={()=>{}}/>
         </div>)})
 
 

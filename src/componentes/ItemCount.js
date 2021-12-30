@@ -24,6 +24,7 @@ function ItemCount ({stock, initial, onAdd}){
         if(stock > 0){
             if(numero >= 1){
                 onAdd(numero)
+                setInitial(initial)
             }else{
                 alert("No es posible agregar 0 productos")
             }
