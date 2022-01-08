@@ -1,25 +1,14 @@
-
-import { useState } from "react"
+import { Link } from "react-router-dom"
 import Item from "./Item"
 
-
-let array =  [{id: 1, producto: "pesas", precio: 50, img: "../imagenes/pesas.jpg"}]
-
-
-function ItemList () {
-    let [productos, setProductos] = useState([])
-    let promesa = new Promise((res, rej) => {
-        setTimeout(() => {
-            res(array)
-        },2000)
-    })
-    promesa.then(()=>{
-        setProductos(array)
-    })
-
+function ItemList ({prop}) {
+    
     return(<>
-        <Item productos={productos}/>
-    </>)
+    {prop.map((e) =>  {
+        return <Link to={`/item/${e.id}`}><Item productos={e} key={e.id}/></Link>
+        })
+
+    }</>)
 
 }
 

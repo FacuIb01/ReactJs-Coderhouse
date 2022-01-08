@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 let i = 0
 const saludos = ["Welcome!", "Bienvenido!", "Bienvenue!", "ようこそ!"]
 
@@ -15,6 +15,10 @@ function Saludo (){
             setSaludos(saludos[i])
         }
     },3000);
+
+    useEffect(() => {
+        setSaludos(saludos[0])
+    }, [])
 
     return(<>
         <h1 id="greetings">{mostrarSaludos}</h1>

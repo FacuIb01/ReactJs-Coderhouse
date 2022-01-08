@@ -1,21 +1,14 @@
-import ItemCount from "./ItemCount"
-
 function Item ({productos}) {
-
-    let mapeo = productos.map((e)=>{
-        return (<div className="producto"><div key={e.id} className="detalle">
-            <h2>{e.producto}</h2>
-            <img src={e.img} alt="" className="imgProducto"/>
-            <p>${e.precio}</p>
-        </div>
-            <ItemCount stock={5} initial={1} onAdd={()=>{}}/>
-        </div>)})
-
-
+    let {id, producto, img, precio} = productos
     return (<>
-        {mapeo}
-    </>)
-
-}
+        <div className="producto">
+            <div key={id} className="detalle">
+                <h2>{producto}</h2>
+                <img src={img} alt="" className="imgProducto"/>
+                <p>${precio}</p>
+            </div>
+        </div>
+        </>
+        )}
 
 export default Item

@@ -1,15 +1,20 @@
 import Header from "./Header";
 import Home from "./componentes/Home"
-import ItemListContainer from "./ItemListContainer";
-import ItemDetailContainer from "./componentes/ItemDetailContainer"
+//import ItemListContainer from "./ItemListContainer";
+//import ItemDetailContainer from "./ItemDetailContainer"
 
+import { BrowserRouter } from "react-router-dom";
+
+import "./index.css"
+
+//<ItemListContainer/>
 function App(){
     return (<>
-        <Header/>
-        <Home/>
-        <ItemListContainer greetings={"Bienvenido!"}/>
-        <ItemDetailContainer></ItemDetailContainer>
-    </>)
+        <BrowserRouter>
+            <Header/>
+            <Home/>
+        </BrowserRouter>
+        </>)
 
 }
 
