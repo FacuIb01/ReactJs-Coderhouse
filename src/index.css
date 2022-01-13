@@ -347,6 +347,19 @@ li{
     background-color: rgb(36, 36, 36);
 }
 
+.finalizarCompra{
+    text-align: center;
+    width: 100%;
+    font-size: 3rem;
+    font-family: 'Bebas Neue', cursive;
+    color: white;
+    transition: all 1s ease;
+}
+
+.finalizarCompra:hover{
+    background-color:grey;
+}
+
 
 .detailTitulo{
     font-size: 3rem;

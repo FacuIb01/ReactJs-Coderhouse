@@ -5,7 +5,7 @@ function ItemList ({prop}) {
     
     return(<>
     {prop.map((e) =>  {
-        return <Link to={`/item/${e.id}`}><Item productos={e} key={e.id}/></Link>
+        return <Link to={`/item/${e.id}`} key={e.id}><Item productos={e} /></Link>
         })
 
     }</>)

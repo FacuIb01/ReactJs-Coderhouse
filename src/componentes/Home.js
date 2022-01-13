@@ -20,6 +20,7 @@ function Home (){
             <Route path="/productos/" element={<ItemListContainer/>}/>
             <Route path="/productos/:tipo" element={<ItemListContainer/>}/>
             <Route path="/item/:id" element={<ItemDetailContainer/>}/>
+            <Route path="/cart" element={<ItemDetailContainer/>}/>
         </Routes>
     </main>)
 }

@@ -21,16 +21,17 @@ function ItemCount ({stock, initial, onAdd}){
     }
 
     const confirmacionCantidad = () => {
-        if(stock > 0){
-            if(numero >= 1){
-                onAdd(numero)
-                setInitial(initial)
-            }else{
-                alert("No es posible agregar 0 productos")
-            }
-        }else{
-            alert("No hay stock del producto")
-        }
+        // if(stock > 0){
+        //     if(numero >= 1){
+        //         onAdd(numero)
+        //         setInitial(initial)
+        //     }else{
+        //         alert("No es posible agregar 0 productos")
+        //     }
+        // }else{
+        //     alert("No hay stock del producto")
+        // }
+        onAdd(numero)
     }
 
 

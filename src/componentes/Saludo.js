@@ -17,7 +17,9 @@ function Saludo (){
     },3000);
 
     useEffect(() => {
-        setSaludos(saludos[0])
+        return function cleanup() {
+            
+        }
     }, [])
 
     return(<>
