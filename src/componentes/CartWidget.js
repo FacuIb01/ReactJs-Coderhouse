@@ -1,6 +1,14 @@
+import { contexto } from "./miContexto"
+
+import { Link } from "react-router-dom"
+import { useContext } from "react"
+
 function CartWidget (){
+    let {carrito} = useContext(contexto)
     return(
-            <a href="/"><li className="carrito"><ion-icon name="cart-outline"size="large"></ion-icon><span id="numeroCarrito">0</span></li></a>
+        <Link to={"/cart"}>
+            <a href="/"><li className="carrito"><ion-icon name="cart-outline"size="large"></ion-icon><span id="numeroCarrito">{carrito.length}</span></li></a>
+            </Link>
     )
 }
 

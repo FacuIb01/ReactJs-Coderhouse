@@ -1,20 +1,19 @@
 import Header from "./Header";
 import Home from "./componentes/Home"
-//import ItemListContainer from "./ItemListContainer";
-//import ItemDetailContainer from "./ItemDetailContainer"
-
 import { BrowserRouter } from "react-router-dom";
-
 import "./index.css"
+import CustomProvider from "./componentes/miContexto";
 
-//<ItemListContainer/>
+
 function App(){
-    return (<>
+    return (
+    <CustomProvider>
         <BrowserRouter>
             <Header/>
             <Home/>
         </BrowserRouter>
-        </>)
+        </CustomProvider>
+        )
 
 }
 

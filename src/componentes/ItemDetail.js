@@ -1,16 +1,22 @@
+import { useContext } from "react"
 import { Link } from "react-router-dom"
-import { useState } from "react/cjs/react.development"
+import { useState } from "react"
 import ItemCount from "./ItemCount"
+import {contexto} from "./miContexto"
 
 function ItemDetail ({item}) {
 
-
+    let {agregarProducto} = useContext(contexto)
     const [count, setCount] = useState(true)
 
     let e = item
 
 
-    const onAdd = (cosas) => {
+    const onAdd = (numero) => {
+        item.cantidad = numero
+        item.valorFinal = item.precio * numero
+        item.agregado = true
+        agregarProducto(item)
         setCount(false)
     }
 
