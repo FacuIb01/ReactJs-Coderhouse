@@ -6,21 +6,21 @@ function Saludo (){
     let [mostrarSaludos, setSaludos] = useState(saludos[0])
 
     
-    setTimeout(() => {
-        if(i === 3){
-            i = 0
-            setSaludos(saludos[i])
-        }else{
-            i = i +1
-            setSaludos(saludos[i])
-        }
-    },3000);
-
+    
     useEffect(() => {
+        setTimeout(() => {
+            if(i === 3){
+                i = 0
+                setSaludos(saludos[i])
+            }else{
+                i = i +1
+                setSaludos(saludos[i])
+            }
+        },3000);
         return function cleanup() {
-            
+            clearTimeout()
         }
-    }, [])
+    })
 
     return(<>
         <h1 id="greetings">{mostrarSaludos}</h1>

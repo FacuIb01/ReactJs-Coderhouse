@@ -23,8 +23,7 @@ function CustomProvider ({children}) {
             setCarrito([...carrito, item])
             setPrecio_total(precio_total + item.valorFinal)
         }else{
-            alert("Este producto ya fue agregado")
-            console.log(carrito)
+            alert("Este producto ya fue agregado") 
         }
     }
 

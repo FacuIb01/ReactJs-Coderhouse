@@ -3,6 +3,7 @@ import { Link } from "react-router-dom"
 import { useState } from "react"
 import ItemCount from "./ItemCount"
 import {contexto} from "./miContexto"
+import { toast } from "react-toastify"
 
 function ItemDetail ({item}) {
 
@@ -18,6 +19,7 @@ function ItemDetail ({item}) {
         item.agregado = true
         agregarProducto(item)
         setCount(false)
+        toast.success(`Se agrego el producto al carrito`)
     }
 
     return (<>
