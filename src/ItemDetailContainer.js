@@ -2,27 +2,28 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import ItemDetail from "./componentes/ItemDetail"
+import { db } from "./firebase"
+import {getDoc, doc, collection} from "firebase/firestore"
 
-
-let array =  [{id: 0,tipo:"mancuernas", producto: "mancuerna", precio: 50, img: "../imagenes/pesas.png", stock:5, initial:2},{id: 1, producto: "pesas", precio: 50, img: "../imagenes/pesas.png", stock:5, initial:2},{id: 2,tipo:"Barras", producto: "barra", precio: 50, img: "../imagenes/pesas.png", stock:5, initial:2}]
 
 function ItemDetailContainer () {
-    let [productoDetail, setProductoDetail] = useState({})
-    let [cargando, setCargando] = useState(true)
-    let {id} = useParams()
+    const [productoDetail, setProductoDetail] = useState({})
+    const [cargando, setCargando] = useState(true)
+    const {id} = useParams()
 
-
-    
     useEffect(()=> {
-            let resultado = new Promise ((res,rej) => {
-            setTimeout(() =>{
-                res(array[id])
-            }, 2000)
-            })
-            resultado.then((res)=>{
-                setProductoDetail(res)
-                setCargando(false)
-            })
+        const productosColeccion = collection(db, "productos")
+        const referencia = doc(productosColeccion, id)
+        const producto = getDoc(referencia)
+        producto
+                .then((res) => {
+                    setProductoDetail(res.data())
+                    setCargando(false)
+                })
+                .catch((error) => {
+                    console.log(error)
+                })
+
         }
 )
     

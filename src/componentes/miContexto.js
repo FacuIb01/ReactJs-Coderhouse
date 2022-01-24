@@ -1,4 +1,5 @@
 import { createContext, useState } from "react";
+import { toast } from "react-toastify";
 
 
 export const contexto = createContext()
@@ -22,8 +23,9 @@ function CustomProvider ({children}) {
         if(isInCart(item) === undefined){
             setCarrito([...carrito, item])
             setPrecio_total(precio_total + item.valorFinal)
+            toast.success(`Se agrego el producto al carrito`)
         }else{
-            alert("Este producto ya fue agregado") 
+            toast.warning("Este producto ya fue agregado al carrito.")
         }
     }
 

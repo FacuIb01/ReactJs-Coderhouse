@@ -17,7 +17,7 @@ function NavBar(){
             <Link to={"/productos"} className="linkLi"><li className="tienda" onMouseEnter={toggleClass} onMouseLeave={toggleClass}><ion-icon name="barbell-outline" size="large"></ion-icon>
             <ul className={isActive ? "dropDownActive": "dropDownDisabled"}>
                 <Link to={"/productos/mancuernas"}><li className="dropDownLi">Mancuernas</li></Link>
-                <Link to={"/productos/Barras"}><li className="dropDownLi">Barras</li></Link>
+                <Link to={"/productos/barras"}><li className="dropDownLi">Barras</li></Link>
                 </ul>
             </li></Link>
             <CartWidget></CartWidget>
