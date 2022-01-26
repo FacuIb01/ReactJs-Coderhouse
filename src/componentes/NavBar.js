@@ -10,7 +10,10 @@ function NavBar(){
         setActive(!isActive);
     };
 
-    return(<nav>
+    return(
+    <header>
+
+    <nav>
         <Link to={"/"}><a href="/" className="logo">OverPowerStore</a></Link>
         <ul className="navUl">
             <Link to={"/"}><li className="home"><ion-icon name="home-outline"size="large"></ion-icon></li></Link>
@@ -22,7 +25,8 @@ function NavBar(){
             </li></Link>
             <CartWidget></CartWidget>
         </ul>
-    </nav>)
+    </nav>
+    </header>)
 }
 
 export default NavBar
