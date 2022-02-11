@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { toast } from "react-toastify"
 
 function ItemCount ({stock, initial, onAdd}){
 
@@ -7,14 +8,14 @@ function ItemCount ({stock, initial, onAdd}){
 
     const incrementar = () => {
         if(numero === stock){
-            alert("No podes comprar más")
+            toast.error("Limite de stock alcanzado.")
         }else{
             setInitial(numero + 1 )
         }
     }
     const disminuir = () => {
         if(numero === 0){
-            alert("los numero negativos no existen")
+            toast.error("No es posible ingresar esa cantidad")
         }else{
             setInitial(numero - 1 )
         }

@@ -5,6 +5,7 @@ import "./index.css"
 import CustomProvider from "./componentes/miContexto";
 import { ToastContainer } from 'react-toastify';
 import NavBar from "./componentes/NavBar";
+import Footer from "./Footer";
 
 
 function App(){
@@ -13,6 +14,7 @@ function App(){
         <BrowserRouter>
             <NavBar/>
             <Home/>
+            <Footer/>
             <ToastContainer autoClose={2000}/> 
         </BrowserRouter>
         </CustomProvider>

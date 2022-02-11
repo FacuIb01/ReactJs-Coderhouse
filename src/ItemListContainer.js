@@ -4,6 +4,7 @@ import ItemList from "./componentes/ItemList"
 import { useParams } from "react-router-dom"
 import { db } from "./firebase"
 import {collection, getDocs, where, query} from "firebase/firestore"
+import { toast } from "react-toastify"
 
 
 
@@ -15,35 +16,25 @@ function ItemListContainer (){
 
     useEffect(() => {
         const productosColeccion = collection(db, "productos")
+        let pedido 
+        
         if(categoria){
             const filtro = where("categoria", "==", categoria)
             const consulta = query(productosColeccion, filtro)
-            const pedido = getDocs(consulta)
-            pedido 
-                .then((res) => {
-                    setProductos(res.docs.map(doc => ({id: doc.id, ...doc.data()})))
-                    setCargando(false)
-                }
-                )
+            pedido = getDocs(consulta)
         }else{
-            const pedido = getDocs(productosColeccion)
-            pedido
-                .then((resultado) => {
-                    const docs = resultado.docs
-                    const productosFormateados = docs.map((doc) => {
-                            const producto = {
-                                id : doc.id,
-                                ...doc.data()
-                            }
-                            return producto
-                    })
-                    setProductos(productosFormateados)
-                    setCargando(false)
-                })
-                .catch(() => {
-                    alert("Algo fallo")
-                })
+            pedido = getDocs(productosColeccion)
         }
+
+        pedido 
+            .then((res) => {
+                setProductos(res.docs.map(doc => ({id: doc.id, ...doc.data()})))
+                setCargando(false)
+            }
+            )
+            .catch((error) => {
+                toast.error(error)
+            })
 
 
     }, [categoria])

@@ -26,19 +26,12 @@ function ItemDetailContainer () {
 
         }
 )
-    
 
-    if(cargando){
-        return (
+        return(
             <section id="ItemDetailContainer">
-                <p className="cargando">Cargando...</p>
+                {cargando ? <p className="cargando">Cargando...</p>:<ItemDetail item= {productoDetail}/>}
             </section>
         )
-
-    }else{
-    return (<section id ="ItemDetailContainer">
-        <ItemDetail item= {productoDetail}/>
-    </section>)}
 }
 
 export default ItemDetailContainer
