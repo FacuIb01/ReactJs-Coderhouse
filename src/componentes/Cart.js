@@ -25,7 +25,7 @@ function Cart () {
         const pedido = addDoc(coleccionProductos, orden)
 
         pedido.then((res) => {
-            toast.success("Compra realizada, su id es" + res.id)
+            toast.success("Compra realizada, su id es " + res.id)
             vaciarCarrito()
         })
     }

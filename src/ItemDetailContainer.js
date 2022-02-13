@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom"
 import ItemDetail from "./componentes/ItemDetail"
 import { db } from "./firebase"
 import {getDoc, doc, collection} from "firebase/firestore"
+import { toast } from "react-toastify"
 
 
 function ItemDetailContainer () {
@@ -21,11 +22,10 @@ function ItemDetailContainer () {
                     setCargando(false)
                 })
                 .catch((error) => {
-                    console.log(error)
+                    toast.error(error)
                 })
 
-        }
-)
+        }, [id])
 
         return(
             <section id="ItemDetailContainer">

@@ -5,7 +5,7 @@ function Footer () {
         <footer id="footer">
             <div id="footerLink">
             <Link to={"/"}><a href="/" className="logo">OverPowerStore</a></Link>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime nobis a voluptates! Unde expedita cupiditate obcaecati quod corporis voluptatibus debitis, ratione, quisquam corrupti facilis rem voluptates temporibus eligendi nobis veniam!</p>
+            <p>OverPowerStore es tu E-commerce de productos de gimnasio de confianza, avalado por los gimnasios más reconocidos del pais.</p>
             </div>
             <div id="footerRedes">
                 <h2 className="footerH2">Redes</h2>
